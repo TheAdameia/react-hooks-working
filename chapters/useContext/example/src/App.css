@@ -1,0 +1,15 @@
+.theme-container {
+
+    margin: 40px auto;
+    max-width: 500px;
+    padding: 20px;
+    text-align: center;
+}
+.light {
+    background: #ccc;
+    color: #333;
+}
+.dark {
+    background: #333;
+    color: #ccc;
+}
