@@ -1,3 +1,5 @@
+# this is a COPY of a class directory for personal use
+
 # Hooks
 
 React Hooks revolutionize how we write components by enabling function components to manage state and side effects. Instead of using class components with complex lifecycle methods, hooks provide simple, reusable functions that "hook into" React features. For example, useState manages component state, useEffect handles side effects like API calls and DOM updates, and useContext accesses React's context system for sharing data.
