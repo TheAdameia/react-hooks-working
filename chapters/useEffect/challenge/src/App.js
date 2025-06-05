@@ -7,8 +7,20 @@ function App() {
   const [allBreeds, setAllBreeds] = useState(["husky","otterhound","dalmation"])
 
   //TODO: On mount, fetch all available breeds
+  useEffect(()=> {
+    fetch("https://dog.ceo/api/breeds/list/all").then(res => res.json())
+    .then(data => {
+      // Convert breeds object to array of breed names
+      const breedList = Object.keys(data.message)
+      setAllBreeds(breedList);
+    })
+  }, [])
 
   //TODO: When breed changes, fetch a specific breed image
+  useEffect(()=> {
+  fetch(`https://dog.ceo/api/breed/${breed}/images/random`)
+  .then(res => res.json()).then(setDogImage)
+  }, [breed])
 
   const handleBreedChange = (event) => {
     setBreed(event.target.value)
@@ -38,7 +50,7 @@ function App() {
         <h2>Selected Breed: {breed}</h2>
         <div className="image-container">
           <img
-            src={dogImage}
+            src={dogImage.message}
             alt={`${breed} dog`}
             className="dog-image"
           />
